@@ -14,23 +14,29 @@ public class AdminCreate implements ActionListener{
 	private JLabel Hyde2;
 	private JFrame frameAcreate;
 	private JPanel PanelAcreate;
-	private JLabel LabelEmpID,LabelEmpName1,LabelEmpName2,LabelEmpProf,LabelEmpAddress,LabelEmpPhone;
+	private JLabel LabelEmpID,LabelEmpName1,LabelEmpName2,LabelEmpProf,LabelEmpAddress,LabelEmpPhone,LabelZone;
 	private JTextField TextEmpID,TextEmpName1,TextEmpName2,TextEmpAddress,TextEmpPhone;
 	private JButton Create,Close;
-	private JComboBox<String> TextEmpProf;
-	String TempID,TempFirst,TempLast,TempOccu,TempAdd,TempPhone,s; 
+	private JComboBox<String> TextEmpProf,TextZone;
+	public String TempID,TempFirst,TempLast,TempOccu,TempAdd,TempPhone,s; 
 	String[] Occu ={"Royal","Government","Police"};
+	String[] Zone ={"Zone1","Zone2","Zone3","Zone4","Zone5","Zone6","Zone7","Zone8"};
 	static final Logger log = Logger.getLogger(AdminCreate.class);
-	public AdminCreate() {
+	public AdminCreate(String TempID,String TempFirst,String TempLast) {
 		// TODO Auto-generated constructor stub
+		this.TempID=TempID;
+		this.TempFirst=TempFirst;
+		this.TempLast=TempLast;
 	}
+	
 	//System.out.println("!@!@#!@#!@#");
 	public void AdminPageCreate(){
 		//System.out.println("!@!@#!@#!@#3");
+		
 		frameAcreate = new JFrame("Admin_Employee_Creation");
 		frameAcreate.setSize(800,800);//frame creating
 		frameAcreate.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frameAcreate.setLocation(600,200 );
+		frameAcreate.setLocation(600,150 );
 		//frameAcreate.setLayout(new GridLayout(0,3));
 		PanelAcreate= new JPanel();
 		frameAcreate.setContentPane(new JLabel(new ImageIcon("E://hydePark/hyde_admincreate.jpg")));//adding image on the background
@@ -40,51 +46,58 @@ public class AdminCreate implements ActionListener{
 		
 		frameAcreate.add(Hyde2);
 		LabelEmpID = new JLabel("                          EmpID");//Label for each attributes.
-		LabelEmpID.setBounds(150,10,200,40);
+		LabelEmpID.setBounds(50,10,200,40);
 		LabelEmpID.setOpaque(true);
 		
 		LabelEmpName1 = new JLabel("                  EmpFirstName");
-		LabelEmpName1.setBounds(150,100,200,40);
+		LabelEmpName1.setBounds(50,100,200,40);
 		LabelEmpName1.setOpaque(true);
 		
 		
 		LabelEmpName2 = new JLabel("                  EmpLastName");
-		LabelEmpName2.setBounds(150,200,200,40);
+		LabelEmpName2.setBounds(50,200,200,40);
 		LabelEmpName2.setOpaque(true);
 		
 		LabelEmpProf = new JLabel("                   Occupation");
-		LabelEmpProf.setBounds(150,300,200,40); 
+		LabelEmpProf.setBounds(50,300,200,40); 
 		LabelEmpProf.setOpaque(true);
 		
 		LabelEmpAddress = new JLabel("                      Address");
-		LabelEmpAddress.setBounds(150,400,200,40); 
+		LabelEmpAddress.setBounds(50,400,200,40); 
 		LabelEmpAddress.setOpaque(true);
 		
 		LabelEmpPhone = new JLabel("                        Phone");
-		LabelEmpPhone.setBounds(150,500,200,40); 
+		LabelEmpPhone.setBounds(50,500,200,40); 
 		LabelEmpPhone.setOpaque(true);
+		
+		LabelZone = new JLabel("                          Zone");
+		LabelZone.setBounds(50, 600, 200, 40);
+		LabelZone.setOpaque(true);
 		
 		
 		TextEmpID = new JTextField();						//textfield for each attributes
-		TextEmpID.setBounds(450,10,200,40);
+		TextEmpID.setBounds(350,10,200,40);
 		
 		TextEmpName1= new JTextField();
-		TextEmpName1.setBounds(450,100,200,40);
+		TextEmpName1.setBounds(350,100,200,40);
 		
 		TextEmpName2 = new JTextField();
-		TextEmpName2.setBounds(450,200,200,40);
+		TextEmpName2.setBounds(350,200,200,40);
 		
 		TextEmpProf = new JComboBox<String>(Occu);
-		TextEmpProf.setBounds(450,300,200,40);
+		TextEmpProf.setBounds(350,300,200,40);
 		
 		TextEmpAddress = new JTextField();
-		TextEmpAddress.setBounds(450,400,200,40);
+		TextEmpAddress.setBounds(350,400,200,40);
 		
 		TextEmpPhone = new JTextField();
-		TextEmpPhone.setBounds(450,500,200,40);
+		TextEmpPhone.setBounds(350,500,200,40);
+		
+		TextZone = new JComboBox<String>(Zone);
+		TextZone.setBounds(350, 600, 200, 40);
 		
 		Create = new JButton("Create Account");			//button
-		Create.setBounds(300, 600, 200, 40);
+		Create.setBounds(600, 600, 200, 40);
 		
 		Close = new JButton("Back to Admin Function");
 		Close.setBounds(300,700,200,40);
@@ -99,6 +112,7 @@ public class AdminCreate implements ActionListener{
 		//System.out.println("!@!@#!@#!@#56");
 		frameAcreate.add(LabelEmpAddress);
 		frameAcreate.add(LabelEmpPhone);
+		frameAcreate.add(LabelZone);
 		//frameAcreate.add(LabelDel);
 		//System.out.println("!@!@#!@#!@#56");
 		frameAcreate.add(TextEmpID);
@@ -107,6 +121,7 @@ public class AdminCreate implements ActionListener{
 		frameAcreate.add(TextEmpProf);
 		frameAcreate.add(TextEmpAddress);
 		frameAcreate.add(TextEmpPhone);
+		frameAcreate.add(TextZone);
 		//frameAcreate.add(TextDel);
 		//System.out.println("!@!@#!@#!@#56");
 		frameAcreate.add(Create);
@@ -194,6 +209,17 @@ public class AdminCreate implements ActionListener{
 			ALP.AdminControl();
 		}
 	}
+	//TESTING ADMIN CREATE
+	public String EMpid(){
+		return TempID;
+	}
+	public String Firstname(){
+		return TempFirst;
+	}
+	public String Lastname(){
+		return TempLast;
+	}
+	//TESTING FUNCTION
 	public String EMPID(){
 	      return TextEmpID.getText();
 	 }
@@ -212,6 +238,9 @@ public class AdminCreate implements ActionListener{
 	public String EMPPHO(){
 	      return TextEmpPhone.getText();
 	 }
+	public String EMPZONE(){
+		  return TextZone.getItemAt(TextZone.getSelectedIndex());
+	}
 	public Connection SqlInsertEmp(Connection Mycon){
 	
 		try{
@@ -221,7 +250,7 @@ public class AdminCreate implements ActionListener{
 			}else*/
 					Mycon =DriverManager.getConnection("jdbc:mysql://localhost:3306/database?autoReconnect=true&useSSL=false","root","suneeth");
 					Statement Mystmt = Mycon.createStatement();
-					String Sql ="insert into employee values('"+TempID+"','"+TempFirst+"','"+TempLast+"','"+TempOccu+"','"+TempAdd+"','"+TempPhone+"','"+s+"')";
+					String Sql ="insert into employee values('"+TempID+"','"+TempFirst+"','"+TempLast+"','"+TempOccu+"','"+TempAdd+"','"+TempPhone+"','"+s+"','"+EMPZONE()+"')";
 					Mystmt.executeUpdate(Sql);
 					JOptionPane.showMessageDialog(null,"Employee Account Created");
 					frameAcreate.setVisible(false);
@@ -233,6 +262,11 @@ public class AdminCreate implements ActionListener{
 			log.error("Enter The Employee Details Again ! \n");
 			JOptionPane.showMessageDialog(null,"Enter The Employee Details Again");
 			e1.printStackTrace();
+		}
+		catch(StringIndexOutOfBoundsException e1){
+			JOptionPane.showMessageDialog(null,"Enter The Employee Details Again");
+			e1.printStackTrace();
+			
 		}
 		return Mycon;
 				

@@ -33,6 +33,7 @@ public class VisContactGuard implements ActionListener {
 		// TODO Auto-generated method stub
 		frameVCG = new JFrame("Contact-Personnel");
 		frameVCG.setSize(800, 800);
+		frameVCG.setLocation(600, 150);
 		frameVCG.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frameVCG.setResizable(false);
 		
@@ -41,14 +42,19 @@ public class VisContactGuard implements ActionListener {
 		//Label = new JLabel();
 		button = new JButton("Press to see Available Employees ");
 		button.setBounds(100, 300, 500, 40);
+		
 		frameVCG.add(button);
+		
 		close = new JButton("Back to Visitor Menu ");
 		close.setBounds(100, 400, 500, 40);
+		
 		Combo = new JComboBox<String>(Incident);
 		Combo.setBounds(100, 100, 200, 40);
+		
 		PresDay=Day();
 		Window win = new Window();
 		TimeDay = win.TIME();
+		
 		System.out.println("day "+PresDay+" "+TimeDay);
 		
 		//frameVCG.add(Label);

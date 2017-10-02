@@ -7,11 +7,12 @@ import java.awt.event.*;
 public class VisCarPark implements ActionListener{
 	private JFrame frameVCP;
 	private JButton Back;
-	private JLabel Label;
+	private String parkname;
 	static final Logger log = Logger.getLogger(VisCarPark.class);
 
-	public VisCarPark() {
+	public VisCarPark(String parkname) {
 		// TODO Auto-generated constructor stub
+		this.parkname=parkname;
 	}
 
 	public void ParkingView() {
@@ -21,21 +22,23 @@ public class VisCarPark implements ActionListener{
 		frameVCP.setLocation(50, 80);
 		frameVCP.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frameVCP.setContentPane(new JLabel(new ImageIcon("E://hydepark/hydecar.jpg")));
-		frameVCP.setExtendedState(JFrame.MAXIMIZED_HORIZ);
 		frameVCP.setResizable(false);
-		Label = new JLabel();
+		
 		Back = new JButton("Back to Parking Page");
 		Back.setBackground(Color.white);
-		Back.setContentAreaFilled(true);
 		Back.setBounds(100, 50, 200, 40);
-		frameVCP.add(Label);
+		
 		frameVCP.add(Back);
 		
 		Back.setActionCommand("Back");
 		Back.addActionListener(this);
+		
 		frameVCP.setVisible(true);
 		
 		
+	}
+	public String park(){
+		return parkname;
 	}
 
 	@Override

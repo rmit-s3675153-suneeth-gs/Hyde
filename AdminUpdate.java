@@ -9,7 +9,6 @@ import java.sql.*;
 
 public class AdminUpdate implements ActionListener {
 	private JFrame frameUp;
-	private JLabel Hyde;
 	private JPanel PanelUp;
 	private JTextField TextUp;
 	private JComboBox<String> ComboUp;
@@ -32,16 +31,16 @@ public class AdminUpdate implements ActionListener {
 		frameUp = new JFrame("UPDATE_ADMIN_EMPLOYEE");
 		frameUp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frameUp.setSize(800,800);
+		frameUp.setLocation(600, 150);
 		frameUp.setContentPane(new JLabel(new ImageIcon("E://hydePark/hyde7.gif")));
 		frameUp.setExtendedState(JFrame.MAXIMIZED_HORIZ);
 		frameUp.setResizable(false);
-		Hyde = new JLabel();
+		
 		ComboUp = new JComboBox<String>(column);
 		ComboUp.setBounds(300, 250, 200, 40);
 		//ComboUp.addItem("FirstName");
 		TextUp = new JTextField();
 		TextUp.setBounds(300,350, 200, 40);
-		frameUp.add(Hyde);
 		PanelUp = new JPanel();
 		
 		Update =new JButton("UPDATE");

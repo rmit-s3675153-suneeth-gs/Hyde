@@ -42,7 +42,8 @@ public class EmployeeLoginPage implements ActionListener {
 		TextLab.setBounds(150,200,200,40);
 		
 		TextLab.setOpaque(true);
-		TextLab.setBackground(Color.WHITE);			
+		TextLab.setBackground(Color.WHITE);	
+		
 		PassLab = new JLabel("                   PASSWORD");
 		PassLab.setBounds(150,300,200,40);
 		PassLab.setOpaque(true);
@@ -66,6 +67,7 @@ public class EmployeeLoginPage implements ActionListener {
 		frameEmp.add(PassLab);
 		frameEmp.add(TextLab);
 		frameEmp.add(PanelEmp);
+		
 		frameEmp.setVisible(true);
 		
 		Login.setActionCommand("LOGIN");

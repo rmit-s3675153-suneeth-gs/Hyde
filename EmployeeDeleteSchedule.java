@@ -25,6 +25,7 @@ public class EmployeeDeleteSchedule implements ActionListener{
 		TempUser = TempUser1;
 		frameEDS = new JFrame("Delete Schedule");
 		frameEDS.setSize(700,700);
+		frameEDS.setLocation(600, 150);
 		frameEDS.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		PanelEDS= new JPanel();

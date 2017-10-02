@@ -7,35 +7,38 @@ import java.awt.event.*;
 public class AdminFunctionPage implements ActionListener {
 
 	
-	private JLabel HydeA;
 	private JFrame frameA;
 	private JPanel PanelA;
 	private JButton CreateAcc,DeleteAcc,UpdateAcc,ViewAcc,Logout;
 	String TempUser = null;
 	static final Logger log = Logger.getLogger(AdminFunctionPage.class);
 	public void  AdminControl(){
+		
 		frameA = new JFrame("AdminOptions");
 		frameA.setSize(800,800);
-		frameA.setLocation(600, 200);
+		frameA.setLocation(600, 150);
 		frameA.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frameA.setExtendedState(JFrame.MAXIMIZED_HORIZ);
 		frameA.setResizable(false);
 		//frameAcreate.setLayout(new GridLayout(0,3));
 		PanelA = new JPanel();
 		frameA.setContentPane(new JLabel(new ImageIcon("E://hydePark/hyde5.jpg")));
-		HydeA = new JLabel();
-		frameA.add(HydeA);
 		
 		CreateAcc = new JButton("Create Employee Account");
 		CreateAcc.setBounds(300,150,200,40);
+		
 		DeleteAcc = new JButton("Delete Employee Account");
 		DeleteAcc.setBounds(300,250,200,40);
+		
 		UpdateAcc = new JButton("Update Employee Account");
 		UpdateAcc.setBounds(300,350,200,40);
+		
 		ViewAcc = new JButton("View Employee Account");
 		ViewAcc.setBounds(300,450,200,40);
+		
 		Logout = new JButton("Logout");
 		Logout.setBounds(300,550,200,40);
+		
 		frameA.add(CreateAcc);
 		frameA.add(DeleteAcc);
 		frameA.add(UpdateAcc);
@@ -68,7 +71,7 @@ public class AdminFunctionPage implements ActionListener {
 		if(e.getActionCommand()=="CREATE"){
 			frameA.setVisible(false);
 			log.info("Creating Employee Account\n");
-			AdminCreate Create = new AdminCreate();
+			AdminCreate Create = new AdminCreate(TempUser, TempUser, TempUser);
 			Create.AdminPageCreate();
 		}
 		if(e.getActionCommand()=="DELETE"){

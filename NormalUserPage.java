@@ -21,7 +21,7 @@ public class NormalUserPage implements ActionListener {
 		User.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		User.setSize(700,700);
 		User.setContentPane(new JLabel(new ImageIcon("E://hydePark/hyde8.jpg")));
-		User.setLocation(600,200 );
+		User.setLocation(600,150 );
 		User.setExtendedState(JFrame.MAXIMIZED_HORIZ);
 		User.setResizable(false);
 		//User.setContentPane(new JLabel(new ImageIcon("E://hydePark/hyde8.jpg")));

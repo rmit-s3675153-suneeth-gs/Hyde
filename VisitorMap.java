@@ -7,7 +7,6 @@ import java.awt.event.*;
 public class VisitorMap implements ActionListener {
 	private JFrame frameV;
 	private JButton Back;
-	private JLabel Label;
 	static final Logger log = Logger.getLogger(VisitorMap.class);
 	public VisitorMap() {
 		// TODO Auto-generated constructor stub
@@ -16,18 +15,18 @@ public class VisitorMap implements ActionListener {
 	public void VisMap() {
 		// TODO Auto-generated method stub
 		frameV = new JFrame("HYDEPARK MAP");
-		frameV.setSize(1850, 850);
-		frameV.setLocation(50, 80);
+		frameV.setSize(1763, 938);
+		frameV.setLocation(50, 50);
 		frameV.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frameV.setContentPane(new JLabel(new ImageIcon("E://hydepark/hydeMap.jpg")));
+		frameV.setContentPane(new JLabel(new ImageIcon("E://hydepark/hydemap2.jpg")));
 		frameV.setExtendedState(JFrame.MAXIMIZED_HORIZ);
 		frameV.setResizable(false);
-		Label = new JLabel();
+		
 		Back = new JButton("Back to Visitor Page");
 		Back.setBackground(Color.white);
 		Back.setContentAreaFilled(true);
-		Back.setBounds(1600, 300, 200, 40);
-		frameV.add(Label);
+		Back.setBounds(1500, 200, 200, 40);
+		
 		frameV.add(Back);
 		
 		Back.setActionCommand("Back");
@@ -36,6 +35,10 @@ public class VisitorMap implements ActionListener {
 		
 		
 	}
+//	public static void main(String[] args){
+//		VisitorMap a = new VisitorMap();
+//		a.VisMap();
+//	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {

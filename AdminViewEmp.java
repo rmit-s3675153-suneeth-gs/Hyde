@@ -26,17 +26,20 @@ public class AdminViewEmp implements ActionListener {
 		// TODO Auto-generated method stub
 		frameVE= new JFrame("EMPLOYEE FULL VIEW");
 		frameVE.setSize(700, 700);
-		frameVE.setLocation(600, 200);
+		frameVE.setLocation(600, 150);
 		frameVE.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frameVE.setExtendedState(JFrame.MAXIMIZED_HORIZ);
 		frameVE.setResizable(false);
 //		frameV.setEditable(false);
 		frameVE.setContentPane(new JLabel(new ImageIcon("E://hydePark/hyde8.jpg")));
+		
 		Connection Mycon =null;
 		SqlFetchEmp(Mycon);
+		
 		PanelVE = new JPanel();
 		Combo = new JComboBox<String>(Emp);
 		Combo.setBounds(270, 150, 200, 40);
+		
 		IndividualEmp = new JButton("Individual Employee View");
 		IndividualEmp.setBounds(270, 250, 200, 40);
 		

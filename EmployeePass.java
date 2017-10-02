@@ -6,7 +6,7 @@ import org.apache.log4j.Logger;
 import java.awt.event.*;
 public class EmployeePass implements ActionListener {
 	private JFrame frameEp;
-	private JLabel OldPass,newPass1,newPass2,Hyde;
+	private JLabel OldPass,newPass1,newPass2;
 	private JPasswordField PassOld,PassNew1,PassNew2;
 	private JPanel PanelEp;
 	private JButton Change,Close;
@@ -22,14 +22,14 @@ public class EmployeePass implements ActionListener {
 		// TODO Auto-generated method stub
 		frameEp = new JFrame("Change Password");
 		frameEp.setSize(800, 800);
+		frameEp.setLocation(600, 150);
 		frameEp.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frameEp.setContentPane(new JLabel(new ImageIcon("E://hydePark/hyde10.gif")));
 		frameEp.setExtendedState(JFrame.MAXIMIZED_HORIZ);
 		frameEp.setResizable(false);
-		Hyde = new JLabel();
-		frameEp.add(Hyde);
 		
 		PanelEp = new JPanel();
+		
 		OldPass = new JLabel("                Old Password");
 		OldPass.setBounds(100,200,200,40);
 		OldPass.setOpaque(true);

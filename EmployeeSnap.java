@@ -12,7 +12,7 @@ import org.apache.log4j.Logger;
 public class EmployeeSnap implements ActionListener{
 	private JFrame frameSnap;
 	private JPanel PanelSnap;
-	private JLabel label,Hyde;
+	private JLabel label;
 	private JTextField Source;
 	private JButton Button,Close;
 	String TempUser;
@@ -30,20 +30,22 @@ public class EmployeeSnap implements ActionListener{
 		
 		frameSnap = new JFrame("SnapShot");
 		frameSnap.setSize(700,700);
+		frameSnap.setLocation(600, 150);
 		frameSnap.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frameSnap.setResizable(false);
 		frameSnap.setContentPane(new JLabel(new ImageIcon("E://hydePark/images.jpg")));
-		Hyde = new JLabel();
-		frameSnap.add(Hyde);
 		PanelSnap = new JPanel();
 		
 		
 		label = new JLabel("Enter the Address");
 		label.setBounds(100,200,200,40);
+		
 		Source = new JTextField();
 		Source.setBounds(300,200,300,40);
+		
 		Button = new JButton("Upload Photo");
 		Button.setBounds(200,300,200,40);
+		
 		Close = new JButton("CLOSE");
 		Close.setBounds(200, 400, 200, 40);
 		

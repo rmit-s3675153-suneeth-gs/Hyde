@@ -21,6 +21,7 @@ public class AdminView implements ActionListener {
 		// TODO Auto-generated method stub
 		frameV= new JFrame("EMPLOYEE FULL VIEW");
 		frameV.setSize(1300, 400);
+		frameV.setLocation(400, 300);
 		frameV.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frameV.setExtendedState(JFrame.MAXIMIZED_HORIZ);
 		frameV.setResizable(false);

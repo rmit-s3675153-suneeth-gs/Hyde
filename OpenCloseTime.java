@@ -21,6 +21,7 @@ public class OpenCloseTime implements ActionListener {
 		// TODO Auto-generated method stub
 		frameOCT = new JFrame("OpeningClosingTime");
 		frameOCT.setSize(1000,1000);
+		frameOCT.setLocation(600,0);
 		frameOCT.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frameOCT.setExtendedState(JFrame.MAXIMIZED_HORIZ);
 		frameOCT.setResizable(false);

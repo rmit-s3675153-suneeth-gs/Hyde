@@ -24,11 +24,17 @@ public class AdminLoginPage implements ActionListener {
 	private JTextField UserField;
 	private JPasswordField PassField;
 	private JButton Button,Close;
+	private String userid,password;
 	/*public static void main(String []args){
 		AdminLoginPage AdMobj =new AdminLoginPage();
 		//AdMobj.AdminLogin();;
 		
 	}*/
+	public AdminLoginPage(String userid,String password){
+		this.userid=userid;
+		this.password=password;
+		
+	}
 	static final Logger log = Logger.getLogger(AdminLoginPage.class);
 	public void AdminLogin() {
 		// TODO Auto-generated constructor stub
@@ -38,7 +44,7 @@ public class AdminLoginPage implements ActionListener {
 		Adm.setTitle("Admin Window");
 		Adm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Adm.setSize(800,800);
-		Adm.setLocation(600, 200);
+		Adm.setLocation(600, 150);
 		Adm.setExtendedState(JFrame.MAXIMIZED_HORIZ);
 		Adm.setResizable(false);
 					
@@ -53,6 +59,7 @@ public class AdminLoginPage implements ActionListener {
 		
 		UserNamLab.setOpaque(true);
 		UserNamLab.setBackground(Color.WHITE);			
+		
 		PassLab = new JLabel("                   PASSWORD");
 		PassLab.setBounds(150,300,200,40);
 		PassLab.setOpaque(true);
@@ -84,6 +91,12 @@ public class AdminLoginPage implements ActionListener {
 		Close.addActionListener(this);
 		Adm.setVisible(true);
 		System.out.println("Lyanna");
+	}
+	public String User(){
+		return userid;
+	}
+	public String pass(){
+		return password;
 	}
 	 public String getUserName(){
 	      return UserField.getText();

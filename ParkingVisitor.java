@@ -6,7 +6,6 @@ import java.awt.event.*;
 
 public class ParkingVisitor implements ActionListener {
 	private JFrame framePV;
-	private JLabel Hyde;
 	private JPanel PanelPV;
 	private JButton Car,DisCar,CyclePark,CycleHire,Back;
 	static final Logger log = Logger.getLogger(ParkingVisitor.class);
@@ -23,7 +22,6 @@ public class ParkingVisitor implements ActionListener {
 		framePV.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		framePV.setLocation(600, 150);
 		framePV.setContentPane(new JLabel(new ImageIcon("E://hydepark/hyde7.jpg")));
-		Hyde = new JLabel();
 		framePV.setExtendedState(JFrame.MAXIMIZED_HORIZ);
 		framePV.setResizable(false);
 		
@@ -55,7 +53,6 @@ public class ParkingVisitor implements ActionListener {
 		CycleHire.setActionCommand("CYCLEHIRE");
 		Back.setActionCommand("BACK");
 		
-		framePV.add(Hyde);
 		framePV.add(Car);
 		framePV.add(DisCar);
 		framePV.add(CyclePark);
@@ -81,7 +78,7 @@ public class ParkingVisitor implements ActionListener {
 		if(e.getActionCommand()=="CAR"){
 			framePV.setVisible(false);
 			log.info("Car Parking Map\n");
-			VisCarPark CP = new VisCarPark();
+			VisCarPark CP = new VisCarPark("123");
 			CP.ParkingView();
 			
 		}

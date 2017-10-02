@@ -6,7 +6,6 @@ public class EmployeeFunctionPage implements ActionListener {
 	private JFrame frameEpage;
 	private JPanel PanelEpage;
 	private JButton PassChange,Update,Schedule,SnapShot,Logout;
-	private JLabel Hyde;
 	String TempUser1;
 	static private Logger log = Logger.getLogger(EmployeeFunctionPage.class);
 
@@ -20,25 +19,29 @@ public class EmployeeFunctionPage implements ActionListener {
 		// TODO Auto-generated method stub
 		frameEpage = new JFrame("EMPLOYEE PAGE");
 		frameEpage.setSize(800, 800);
+		frameEpage.setLocation(600, 150);
 		frameEpage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frameEpage.setExtendedState(JFrame.MAXIMIZED_HORIZ);
 		frameEpage.setResizable(false);
 		
 		PanelEpage= new JPanel();
 		frameEpage.setContentPane(new JLabel(new ImageIcon("E://hydePark/hyde10.gif")));
-		Hyde = new JLabel();
-		frameEpage.add(Hyde);
 		
 		PassChange = new JButton("Change Password");
 		PassChange.setBounds(300,150,200,40);
+		
 		Update = new JButton("Update Details");
 		Update.setBounds(300,250,200,40);
+		
 		Schedule = new JButton("Duty Schedule");
 		Schedule.setBounds(300,350,200,40);
+		
 		SnapShot = new JButton("SnapShot");
 		SnapShot.setBounds(300,450,200,40);
+		
 		Logout = new JButton("Logout");
 		Logout.setBounds(300,550,200,40);
+		
 		frameEpage.add(PassChange);
 		frameEpage.add(Update);
 		frameEpage.add(Schedule);
@@ -53,6 +56,7 @@ public class EmployeeFunctionPage implements ActionListener {
 		SnapShot.setActionCommand("SNAPSHOT");
 		
 		frameEpage.setVisible(true);
+		
 		PassChange.addActionListener(this);
 		Update.addActionListener(this);
 		Schedule.addActionListener(this);

@@ -40,6 +40,7 @@ public class VisEmpList implements ActionListener {
 		}
 		frameVEL = new JFrame("EMPLOYEE LIST");
 		frameVEL.setSize(800, 800);
+		frameVEL.setLocation(600, 150);
 		frameVEL.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frameVEL.setResizable(false);
 		

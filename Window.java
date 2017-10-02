@@ -196,7 +196,7 @@ public class Window extends Thread implements ActionListener {
 				//System.out.println("PUDGE");
 				log.info("Entering Admin System\n");
 				frameW.setVisible(false);
-				AdminLoginPage admin =new AdminLoginPage();
+				AdminLoginPage admin =new AdminLoginPage("12","21");
 				admin.AdminLogin();
 			//System.out.println("INVOKER");
 				/*Button.setActionCommand("LOGIN");

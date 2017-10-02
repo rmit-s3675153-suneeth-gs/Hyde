@@ -9,7 +9,7 @@ import java.sql.*;
 public class EmployeeSchedule implements ActionListener {
 	private JFrame frameSch;
 	private JPanel PanelSch;
-	private JLabel Hyde,LabDay,LabStart,LabEnd;
+	private JLabel LabDay,LabStart,LabEnd;
 	private JComboBox<String> TextStHour,TextEnHour;
 	private JComboBox<String> TextStMin,TextEnMin;
 	private JComboBox<String> TextStSec,TextEnSec;
@@ -38,13 +38,13 @@ public class EmployeeSchedule implements ActionListener {
 		TempUser=TempUser1;
 		frameSch = new JFrame("EMPLOYEE SCHEDULE");
 		frameSch.setSize(800, 800);
+		frameSch.setLocation(600, 150);
 		frameSch.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		PanelSch =  new JPanel();
 		frameSch.setContentPane(new JLabel(new ImageIcon("E://hydePark/hyde8.jpg")));
 		frameSch.setExtendedState(JFrame.MAXIMIZED_HORIZ);
 		frameSch.setResizable(false);
-		Hyde = new JLabel();
 		
 		//men = new JMenu("QWETQWE");
 		//men.setBounds(1, 1, 200, 100);
@@ -78,15 +78,19 @@ public class EmployeeSchedule implements ActionListener {
 		System.out.println("!@!#$!");
 		TextStHour = new JComboBox<String>(Hour);
 		TextStHour.setBounds(500,200,40,40);
+		
 		TextStMin = new JComboBox<String>(Min);
 		TextStMin.setBounds(585,200,40,40);
+		
 		TextStSec = new JComboBox<String>(Sec);
 		TextStSec.setBounds(670,200,40,40);
 		
 		TextEnHour = new JComboBox<String>(Hour);
 		TextEnHour.setBounds(500,300,40,40);
+		
 		TextEnMin = new JComboBox<String>(Min);
 		TextEnMin.setBounds(585,300,40,40);
+		
 		TextEnSec = new JComboBox<String>(Sec);
 		TextEnSec.setBounds(670,300,40,40);
 		
@@ -116,7 +120,6 @@ public class EmployeeSchedule implements ActionListener {
 		frameSch.add(TextEnSec);
 		
 		frameSch.add(UpSched);
-		frameSch.add(Hyde);
 		frameSch.add(Logout);
 		frameSch.add(Close);
 		frameSch.add(Delete);

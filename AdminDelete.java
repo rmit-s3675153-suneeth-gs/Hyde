@@ -10,13 +10,14 @@ import java.sql.*;
 public class AdminDelete implements ActionListener{
 	
 	private JFrame frameAdel;
-	private JLabel LabelDel,Hyde4;
+	private JLabel LabelDel;
 	private JButton Delete,Close;
 	private JPanel PanelAdel;
 	//private JTextField TextDel;
 	private JComboBox<String>TextDel;
-	String TempID;
+	String TempID=null;
 	String[] EmpList= null;
+	String[] EmpList1= null;
 	static private Logger log = Logger.getLogger(AdminDelete.class);
 //	public static void main(String []args){
 //		AdminDelete a = new AdminDelete();
@@ -31,18 +32,19 @@ public class AdminDelete implements ActionListener{
 		// TODO Auto-generated method stub
 		frameAdel = new JFrame("Admin_Employee_Deletion");
 		frameAdel.setSize(800,800);
+		frameAdel.setLocation(600, 150);
 		frameAdel.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		//frameAcreate.setLayout(new GridLayout(0,3));
 		PanelAdel= new JPanel();
 		frameAdel.setContentPane(new JLabel(new ImageIcon("E://hydePark/hyde4.jpg")));
-		Hyde4 = new JLabel();
 		
 		frameAdel.setExtendedState(JFrame.MAXIMIZED_HORIZ);
 		frameAdel.setResizable(false);
-		frameAdel.add(Hyde4);
+		
 		LabelDel = new JLabel("            Enter the ID to delete");
 		LabelDel.setBounds(0,250,200,40);
 		LabelDel.setOpaque(true);
+		
 		Connection Mycon = null;
 		Sql_Employee_List(Mycon);
 		
@@ -87,10 +89,10 @@ public class AdminDelete implements ActionListener{
 				int i =0;
 				EmpList = new String[count];
 				Statement Mystmt1 = Mycon.createStatement();
-				String sql = "select emp_id from employee ";
+				String sql = "select emp_id,first_name,last_name from employee ";
 				ResultSet res = Mystmt1.executeQuery(sql);
 				while(res.next()){
-					EmpList[i]=res.getString(1);
+					EmpList[i]=res.getString(1)+"- "+res.getString(3)+" , "+res.getString(2);
 					i++;
 				}
 				log.info("Employee found inside the Database\n");
@@ -108,10 +110,12 @@ public class AdminDelete implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getActionCommand()=="DELETE"){
-			System.out.println("AASDASDASDDELETE");
+			//System.out.println("AASDASDASDDELETE");
 			
-			TempID=DELEMP();
-			System.out.println("21212113  "+TempID);
+			String t=DELEMP();
+			TempID=ExtractEmp(t);
+			
+			//System.out.println("21212113  "+TempID);
 			//System.out.println("AASDASDASD");
 			Connection Mycon=null;
 			int Condition =SqlCheckEmp(Mycon);
@@ -145,6 +149,28 @@ public class AdminDelete implements ActionListener{
 		}
 	}
 
+	private String ExtractEmp(String t) {//Extracting Empid from the  combobox..returns only employee ID
+		// TODO Auto-generated method stub
+		int i;
+		
+		for(i =0;i<t.length();i++)
+			if(t.charAt(i)=='-')
+				break;
+		
+		char [] t2 = new char [i];
+		
+		for(int j =0;j<i;j++){
+			if(t.charAt(j)=='-')
+				break;
+			t2[j]=t.charAt(j);
+		}
+		
+		t=String.valueOf(t2);
+		return t;
+		
+	}
+
+	
 	public Connection SqlDeleteChild(Connection Mycon) {
 		// TODO Auto-generated method stub
 		try {

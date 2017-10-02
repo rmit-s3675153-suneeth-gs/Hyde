@@ -51,6 +51,7 @@ public class PayDisplayInformation implements ActionListener {
 		
 		Back = new JButton("Back to Visitor Menu");
 		Back.setBounds(10, 10, 200, 40);
+		
 		framePI.add(Label);
 		framePI.add(Label1);
 		framePI.add(Label2);
@@ -61,11 +62,13 @@ public class PayDisplayInformation implements ActionListener {
 		framePI.add(Label7);
 		framePI.add(Label8);
 		framePI.add(Label9);
+		
 		framePI.add(Back);
 		framePI.add(PanelPI);
 		
 		Back.setActionCommand("BACK");
 		Back.addActionListener(this);
+		
 		framePI.setVisible(true);
 		
 	}
